@@ -6,8 +6,8 @@ project(SlicerExtension_ColiageFilter)
 # Extension meta-information
 set(EXTENSION_HOMEPAGE "http://slicer.org/slicerWiki/index.php/Documentation/Nightly/Extensions/SlicerExtension_ColiageFilter")
 set(EXTENSION_CATEGORY "Examples")
-set(EXTENSION_CONTRIBUTORS "John Doe (AnyWare Corp.)")
-set(EXTENSION_DESCRIPTION "This is an example of a simple extension")
+set(EXTENSION_CONTRIBUTORS "Ahmad Algohary (Case Western Reserve University)")
+set(EXTENSION_DESCRIPTION "This is an example of a simple extension for extracting Coliage filter.")
 set(EXTENSION_ICONURL "http://www.example.com/Slicer/Extensions/SlicerExtension_ColiageFilter.png")
 set(EXTENSION_SCREENSHOTURLS "http://www.example.com/Slicer/Extensions/SlicerExtension_ColiageFilter/Screenshots/1.png")
 
