@@ -14,6 +14,11 @@ set(EXTENSION_SCREENSHOTURLS "http://www.example.com/Slicer/Extensions/SlicerExt
 set(EXTENSION_DEPENDS "NA")
 set(EXTENSION_STATUS "This is a beta version.")
 
+set(EXTENSION_LICENSE_FILE "A:/CODE/Slicer/source/License.txt")
+set(EXTENSION_README_FILE "A:/CODE/Slicer/source/README.txt")
+
+
+
 #-----------------------------------------------------------------------------
 # Extension dependencies
 find_package(Slicer REQUIRED)
