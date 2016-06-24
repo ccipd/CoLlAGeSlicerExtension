@@ -37,7 +37,7 @@ int DoIt( int argc, char * argv[], TPixel )
     InputImageType, OutputImageType>  FilterType;
   typename FilterType::Pointer filter = FilterType::New();
   filter->SetInput( reader->GetOutput() );
-  filter->SetSigma( sigma );
+  filter->SetSigma( radius );
 
   typedef itk::ImageFileWriter<OutputImageType> WriterType;
   typename WriterType::Pointer writer = WriterType::New();
@@ -53,6 +53,9 @@ int DoIt( int argc, char * argv[], TPixel )
 
 int main( int argc, char * argv[] )
 {
+
+    std::cout << "\nAAAA\n"
+
   PARSE_ARGS;
 
   itk::ImageIOBase::IOPixelType     pixelType;

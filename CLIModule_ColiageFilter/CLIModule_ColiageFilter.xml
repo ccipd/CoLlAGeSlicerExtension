@@ -6,19 +6,12 @@
   <version>0.0.1</version>
   <documentation-url>http://www.example.com/Slicer/Modules/CLIModule_ColiageFilter</documentation-url>
   <license>Slicer</license>
-  <contributor>FirstName LastName (Institution), FirstName LastName (Institution)</contributor>
-  <acknowledgements>This work was partially funded by NIH grant NXNNXXNNNNNN-NNXN</acknowledgements>
+  <contributor>Ahmad Algohary (Case Western Reserve University)</contributor>
+  <acknowledgements>This work was partially funded by NIH-National Cancer Institute (NCI) grant CA167811</acknowledgements>
   <parameters>
     <label>IO</label>
     <description><![CDATA[Input/output parameters]]></description>
-    <double>
-      <name>sigma</name>
-      <longflag>sigma</longflag>
-      <flag>s</flag>
-      <label>Sigma</label>
-      <description><![CDATA[A double value (in units of mm) passed to the algorithm]]></description>
-      <default>1.0</default>
-    </double>
+
     <image>
       <name>inputVolume</name>
       <label>Input Volume</label>
@@ -26,6 +19,7 @@
       <index>0</index>
       <description><![CDATA[Input volume]]></description>
     </image>
+	
     <image>
       <name>outputVolume</name>
       <label>Output Volume</label>
@@ -33,5 +27,13 @@
       <index>1</index>
       <description><![CDATA[Output Volume]]></description>
     </image>
+	
+	<integer>
+      <name>radius</name>
+	  <channel>input</channel>
+      <index>2</index>
+      <description><![CDATA[An integer value (in units of pixels) passed to the algorithm]]></description>
+      <default>2</default>
+    </integer>
   </parameters>
 </executable>
