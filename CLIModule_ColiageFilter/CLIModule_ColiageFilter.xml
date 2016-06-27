@@ -20,18 +20,26 @@
       <description><![CDATA[Input volume]]></description>
     </image>
 	
+	<image>
+      <name>inputMask</name>
+      <label>Input Mask</label>
+      <channel>input</channel>
+      <index>1</index>
+      <description><![CDATA[Input mask]]></description>
+    </image>
+	
     <image>
       <name>outputVolume</name>
       <label>Output Volume</label>
       <channel>output</channel>
-      <index>1</index>
+      <index>2</index>
       <description><![CDATA[Output Volume]]></description>
     </image>
 	
 	<integer>
       <name>radius</name>
 	  <channel>input</channel>
-      <index>2</index>
+      <index>3</index>
       <description><![CDATA[An integer value (in units of pixels) passed to the algorithm]]></description>
       <default>2</default>
     </integer>
