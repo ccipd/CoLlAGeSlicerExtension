@@ -23,15 +23,18 @@ include(${ITK_USE_FILE})
 
 #-----------------------------------------------------------------------------
 set(MODULE_INCLUDE_DIRECTORIES
+	"${CMAKE_CURRENT_LIST_DIR}/Eigen"
   )
 
 set(MODULE_SRCS
+
   )
 
 set(MODULE_TARGET_LIBRARIES
   ${ITK_LIBRARIES}
   )
 
+  
 #-----------------------------------------------------------------------------
 SEMMacroBuildCLI(
   NAME ${MODULE_NAME}

@@ -1,47 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <executable>
-  <category>Examples</category>
-  <title>CLIModule_ColiageFilter</title>
-  <description><![CDATA[This is a CLI module that can be bundled in an extension]]></description>
-  <version>0.0.1</version>
-  <documentation-url>http://www.example.com/Slicer/Modules/CLIModule_ColiageFilter</documentation-url>
+  <category>Radiomics</category>
+  <title>COLlAGE Texture Radiomics</title>
+  <description><![CDATA[This is a CLI module bundled in an extension]]></description>
+  <version>0.1.15</version>
+  <documentation-url>https://www.slicer.org/slicerWiki/index.php/Documentation/Nightly/Modules/CLIModule_ColiageFilter</documentation-url>
   <license>Slicer</license>
   <contributor>Ahmad Algohary (Case Western Reserve University)</contributor>
   <acknowledgements>This work was partially funded by NIH-National Cancer Institute (NCI) grant CA167811</acknowledgements>
   <parameters>
-    <label>IO</label>
-    <description><![CDATA[Input/output parameters]]></description>
+    <label>INPUT</label>
+    <description><![CDATA[Input]]></description>
 
     <image>
-      <name>inputVolume</name>
-      <label>Input Volume</label>
+      <name>inputImage</name>
+      <label>Input Image</label>
       <channel>input</channel>
       <index>0</index>
-      <description><![CDATA[Input volume]]></description>
+      <description><![CDATA[Input Image]]></description>
     </image>
-	
+
 	<image>
       <name>inputMask</name>
       <label>Input Mask</label>
       <channel>input</channel>
       <index>1</index>
-      <description><![CDATA[Input mask]]></description>
+      <description><![CDATA[Input Mask]]></description>
     </image>
+	
+  </parameters>
+
+  <parameters>
+  
+    <label>OUTPUT</label>
+    <description><![CDATA[Output]]></description>
 	
     <image>
-      <name>outputVolume</name>
-      <label>Output Volume</label>
+      <name>outputImage</name>
+      <label>Output Image</label>
       <channel>output</channel>
-      <index>2</index>
-      <description><![CDATA[Output Volume]]></description>
+      <index>0</index>
+      <description><![CDATA[Output Image]]></description>
     </image>
 	
-	<integer>
+  </parameters>
+
+  <parameters>
+  
+    <label>PARAMETERS</label>
+    <description><![CDATA[Parameters]]></description>
+	
+    <integer>
       <name>radius</name>
+      <label>Radius</label>
 	  <channel>input</channel>
-      <index>3</index>
+      <index>0</index>
       <description><![CDATA[An integer value (in units of pixels) passed to the algorithm]]></description>
       <default>2</default>
+      <constraints> <minimum>1</minimum> <maximum>10</maximum> <step>1</step> </constraints>
     </integer>
   </parameters>
-</executable>
+  
+  
+  
+  </executable>
