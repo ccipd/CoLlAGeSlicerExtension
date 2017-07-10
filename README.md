@@ -27,63 +27,9 @@
 
   <meta name="viewport" content="width=device-width">
   
-  <title>qt-easy-build/README.md at 4.8.7 · jcfr/qt-easy-build</title>
-  <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
-  <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
-  <meta property="fb:app_id" content="1401488693436528">
-
-    
-
-  <link rel="assets" href="https://assets-cdn.github.com/">
-  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MTgzMzM3ODAyOmZlZWIzNDhlNmFhYjA4YjAxNzE2ZjAwOTcyZjA4YzVkZGQxMjg3NGJjZGI3ZDAxMWEzNjgzYjhkOTY1MTVmYmY=--f585d329ae22b4259616d3b474dad4774df0c847">
-  <meta name="pjax-timeout" content="1000">
-  <link rel="sudo-modal" href="/sessions/sudo_modal">
-  <meta name="request-id" content="EE1A:14D3:8AC2A:EB0D1:5963F360" data-pjax-transient>
-  
-
-  <meta name="selected-link" value="repo_source" data-pjax-transient>
-
-  <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
-<meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
-    <meta name="google-analytics" content="UA-3769691-2">
-
-<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="https://collector.githubapp.com/github-external/browser_event" name="octolytics-event-url" /><meta content="EE1A:14D3:8AC2A:EB0D1:5963F360" name="octolytics-dimension-request_id" /><meta content="iad" name="octolytics-dimension-region_edge" /><meta content="iad" name="octolytics-dimension-region_render" /><meta content="15206179" name="octolytics-actor-id" /><meta content="algohary" name="octolytics-actor-login" /><meta content="24717ee505cfd5080323d0d2797bdfa935c602692a3cb837f3e22049cb14be66" name="octolytics-actor-hash" />
-<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" name="analytics-location" />
 
 
 
-
-  <meta class="js-ga-set" name="dimension1" content="Logged In">
-
-
-  
-
-      <meta name="hostname" content="github.com">
-  <meta name="user-login" content="algohary">
-
-      <meta name="expected-hostname" content="github.com">
-    <meta name="js-proxy-site-detection-payload" content="OGM2ODEwOGNkMjMyMzZlY2U0YzMxYTc0MmFjNzNlNzVhOWUyMjVjNjM3ZjE5NzI5YjdkNzJkMDMzOGViNjQ5NXx7InJlbW90ZV9hZGRyZXNzIjoiMTI5LjIyLjEzNi4yNiIsInJlcXVlc3RfaWQiOiJFRTFBOjE0RDM6OEFDMkE6RUIwRDE6NTk2M0YzNjAiLCJ0aW1lc3RhbXAiOjE0OTk3MjI1OTIsImhvc3QiOiJnaXRodWIuY29tIn0=">
-
-
-  <meta name="html-safe-nonce" content="be1481fac6b065db17323bd1964d9073af24e26d">
-
-  <meta http-equiv="x-pjax-version" content="e0a09c603742d0bab53423f224a0284e">
-  
-
-      <link href="https://github.com/jcfr/qt-easy-build/commits/4.8.7.atom" rel="alternate" title="Recent Commits to qt-easy-build:4.8.7" type="application/atom+xml">
-
-  <meta name="description" content="qt-easy-build - Scripts allowing to easily build Qt with OpenSSL support on Linux, MacOSX or Windows">
-  <meta name="go-import" content="github.com/jcfr/qt-easy-build git https://github.com/jcfr/qt-easy-build.git">
-
-  <meta content="219043" name="octolytics-dimension-user_id" /><meta content="jcfr" name="octolytics-dimension-user_login" /><meta content="15945282" name="octolytics-dimension-repository_id" /><meta content="jcfr/qt-easy-build" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="15945282" name="octolytics-dimension-repository_network_root_id" /><meta content="jcfr/qt-easy-build" name="octolytics-dimension-repository_network_root_nwo" /><meta content="false" name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" />
-
-
-    <link rel="canonical" href="https://github.com/jcfr/qt-easy-build/blob/4.8.7/README.md" data-pjax-transient>
-
-
-  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
-
-  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
 
   <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#000000">
   <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
