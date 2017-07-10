@@ -33,6 +33,7 @@ set(MODULE_SRCS
 set(MODULE_TARGET_LIBRARIES
   ${ITK_LIBRARIES}
   )
+  
 #-----------------------------------------------------------------------------
 if(UNIX)
     SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=gnu++0x")
