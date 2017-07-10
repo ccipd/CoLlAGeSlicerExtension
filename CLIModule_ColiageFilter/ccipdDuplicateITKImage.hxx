@@ -5,6 +5,7 @@
 #include "ccipdCore.h"
 ccipdDisableAllWarnings
 #include <itkImageDuplicator.h>
+#include <cstddef>
 ccipdEnableAllWarnings
 //////////////////////////////////////////////////////////////////////////////////////////
 

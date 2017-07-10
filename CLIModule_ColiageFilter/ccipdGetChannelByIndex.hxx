@@ -3,6 +3,7 @@
 
 #include "ccipdVolumeTypes.h"
 #include "ccipdCore.h"
+
 ccipdDisableAllWarnings
 
 		// itk includes
@@ -11,6 +12,7 @@ ccipdDisableAllWarnings
 		#include <itkVectorIndexSelectionCastImageFilter.h>
 
 		// std includes
+#include <cstddef>
 		#include <iostream>		
 
 ccipdEnableAllWarnings
