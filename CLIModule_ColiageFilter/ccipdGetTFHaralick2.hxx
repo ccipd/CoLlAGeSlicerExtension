@@ -73,14 +73,13 @@ namespace ccipd
 
 	void haralick2(double *image, double *haralicks, int ws, int dist, int graylevels, int background, int rows, int cols, int nharalicks)
 	{
-		int i, j, k, ii, jj, nbins, nzeros, nnonzeros, somepct, tenpct, pynzs, pxnzs;
+		int i, j, k, ii, jj, nbins, nnonzeros, tenpct, pynzs, pxnzs;
 		int *hi, *hj, *himhj, *hiphj;
 		double *comtx, *p, *pnz, *nzcomtx, *px, *py, *pxplusy, *pxminusy;
 		double entropyval, energyval, inertiaval, idmval, correlationval, info1val, info2val, H1, H2,
 			sigma_x, sigma_y, mu_x, mu_y, h_x, h_y, h_max, saval, svval, seval, daval, dvval, deval, cosum;
 
 		nbins = graylevels*graylevels;
-		somepct = (int)std::floor(.025*rows*cols - 1);
 		tenpct = (int)std::floor(.1*rows*cols - 1);
 
 		comtx = (double *)malloc(nbins*sizeof(double));
@@ -141,7 +140,7 @@ namespace ccipd
 							p[k] = 0;
 						}
 					}
-					nnonzeros = ii; nzeros = nbins - nnonzeros;
+					nnonzeros = ii;
 
 					/* Entropy, Energy, Inertial, Inv. Diff. Moment */
 					for (k = 0; k < nnonzeros; k++)
@@ -250,7 +249,19 @@ namespace ccipd
 			}
 		}
 
-		delete[] comtx, p, pnz, nzcomtx, px, py, pxplusy, pxminusy, hi, hj, himhj, hiphj;
+		delete[] comtx ;
+		delete[] p ;
+		delete[] pnz ;
+		delete[] nzcomtx ;
+		delete[] px ;
+		delete[] py ;
+		delete[] pxplusy ;
+		delete[] pxminusy ;
+		delete[] hi ;
+		delete[] hj ;
+		delete[] himhj ;
+		delete[] hiphj ;
+
 	}
 
 	// Ahmad Algohary 05/03/2017

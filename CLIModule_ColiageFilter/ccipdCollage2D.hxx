@@ -316,61 +316,6 @@ namespace ccipd
 		ccipdCatchExceptionMacro("", typename TOutputImage::Pointer())
 	}
 
-	template<class TScalarImageType, unsigned int TDim>
-	typename TScalarImageType::Pointer
-		GetDirectionalGradient(typename TScalarImageType::Pointer pInputImage, const unsigned int direction) // 0: y, 1: x, 2: z
-	{
-		try
-		{
-			if (!pInputImage)
-			{
-				std::cout << "Error: Null Image Pointer.\n";
-				return typename TScalarImageType::Pointer();
-			}
-
-			if ((direction) > ((unsigned int)pInputImage->ImageDimension - 1))
-			{
-				std::cout << "Error: Requested dimension mismatch.\n";
-				return typename TScalarImageType::Pointer();
-			}
-
-			typedef itk::VectorImage<typename TScalarImageType::PixelType, TDim> TVectorImageType;
-			typename TVectorImageType::Pointer pGradientImage = GetFeatureGradient<TScalarImageType, TVectorImageType>(pInputImage);
-
-			//////// Multiply first and last rows/cols of the output Image by 2
-			typename TScalarImageType::SizeType imSize = pInputImage->GetBufferedRegion().GetSize();
-			EigenMatrixTypeD mat_I(imSize[0], imSize[1]);
-			mat_I.setOnes();
-
-			switch (direction)
-			{
-			case 0: //Gy
-				mat_I.row(0).setConstant(2.0f);
-				mat_I.row(imSize[0] - 1).setConstant(2.0f);
-				break;
-			case 1: //Gx
-				mat_I.col(0).setConstant(2.0f);
-				mat_I.col(imSize[1] - 1).setConstant(2.0f);
-				break;
-			case 2: // Gz
-				break;
-			default:
-				throw itk::ExceptionObject(__FILE__, __LINE__, "Invalid gradient image ...");
-			}
-
-			typename TScalarImageType::Pointer pG = GetChannelByIndex<TVectorImageType, TScalarImageType>(pGradientImage, direction);
-			EigenMatrixTypeD mat_G = ConvertImageToMatrix<TScalarImageType, double>(pG);
-
-			// Multiply
-			mat_G = mat_G.cwiseProduct(mat_I);
-
-			typename TScalarImageType::Pointer pO = CreateITKImage<TScalarImageType>(0, imSize[0], imSize[1]);
-			SetImageFromMatrix<TScalarImageType>(pO, mat_G);
-			return pO;
-		}
-		ccipdCatchExceptionMacro("", typename TScalarImageType::Pointer())
-	}
-
 	/*
 	If the image is 2D: each matrix element will map to its corresponding position in the image
 	*/
@@ -428,6 +373,61 @@ namespace ccipd
 			delete[] pArr;
 		}
 	} // SetImageFromMatrix
+
+	template<class TScalarImageType, unsigned int TDim>
+	typename TScalarImageType::Pointer
+		GetDirectionalGradient(typename TScalarImageType::Pointer pInputImage, const unsigned int direction) // 0: y, 1: x, 2: z
+	{
+		try
+		{
+			if (!pInputImage)
+			{
+				std::cout << "Error: Null Image Pointer.\n";
+				return typename TScalarImageType::Pointer();
+			}
+
+			if ((direction) > ((unsigned int)pInputImage->ImageDimension - 1))
+			{
+				std::cout << "Error: Requested dimension mismatch.\n";
+				return typename TScalarImageType::Pointer();
+			}
+
+			typedef itk::VectorImage<typename TScalarImageType::PixelType, TDim> TVectorImageType;
+			typename TVectorImageType::Pointer pGradientImage = GetFeatureGradient<TScalarImageType, TVectorImageType>(pInputImage);
+
+			//////// Multiply first and last rows/cols of the output Image by 2
+			typename TScalarImageType::SizeType imSize = pInputImage->GetBufferedRegion().GetSize();
+			EigenMatrixTypeD mat_I(imSize[0], imSize[1]);
+			mat_I.setOnes();
+
+			switch (direction)
+			{
+			case 0: //Gy
+				mat_I.row(0).setConstant(2.0f);
+				mat_I.row(imSize[0] - 1).setConstant(2.0f);
+				break;
+			case 1: //Gx
+				mat_I.col(0).setConstant(2.0f);
+				mat_I.col(imSize[1] - 1).setConstant(2.0f);
+				break;
+			case 2: // Gz
+				break;
+			default:
+				throw itk::ExceptionObject(__FILE__, __LINE__, "Invalid gradient image ...");
+			}
+
+			typename TScalarImageType::Pointer pG = GetChannelByIndex<TVectorImageType, TScalarImageType>(pGradientImage, direction);
+			EigenMatrixTypeD mat_G = ConvertImageToMatrix<TScalarImageType, double>(pG);
+
+			// Multiply
+			mat_G = mat_G.cwiseProduct(mat_I);
+
+			typename TScalarImageType::Pointer pO = CreateITKImage<TScalarImageType>(0, imSize[0], imSize[1]);
+			SetImageFromMatrix<TScalarImageType>(pO, mat_G);
+			return pO;
+		}
+		ccipdCatchExceptionMacro("", typename TScalarImageType::Pointer())
+	}
 
 	template<class ScalarType, int Rows, int Cols, int Options>
 	Eigen::Matrix<ScalarType, Rows, Cols, Options, Rows, Cols>
