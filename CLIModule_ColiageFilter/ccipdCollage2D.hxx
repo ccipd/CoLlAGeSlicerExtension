@@ -41,33 +41,16 @@ namespace ccipd
 {
 	template <class TInputImageType>
 	typename TInputImageType::Pointer
-		CreateITKImage(typename TInputImageType::PixelType uniValue, ...)
+		CreateITKImage2D(typename TInputImageType::PixelType uniValue,
+			             unsigned int sizeX, unsigned int sizeY)
 	{
 		typename TInputImageType::Pointer pImage = TInputImageType::New();
-
-		typename TInputImageType::IndexType start;
-		start.Fill(0);
-
-		typename TInputImageType::SizeType size;
-
-		//unsigned int TDimension = pImage->ImageDimension;
-
-		va_list arguments;                  // A place to store the list of arguments
-		va_start(arguments, pImage->ImageDimension);    // Initializing arguments to store all values after num
-#if defined _MSC_VER
-		va_arg(arguments, unsigned int);    // First argument is dummy ONLY on MSVC
-#endif
-
-		for (unsigned int x = 0; x < (unsigned int)pImage->ImageDimension; x++)   // Loop until all numbers are added
-			size[x] = va_arg(arguments, unsigned int);                           // Adds the next value in argument list to sum.
-		va_end(arguments);                                                       // Cleans up the list
-
+		typename TInputImageType::IndexType start = {0, 0};
+		typename TInputImageType::SizeType size = {sizeX, sizeY};
 		typename TInputImageType::RegionType region(start, size);
-
 		pImage->SetRegions(region);
 		pImage->Allocate();
 		pImage->FillBuffer(uniValue);
-
 		return pImage;
 	}
 
@@ -425,7 +408,7 @@ namespace ccipd
 			// Multiply
 			mat_G = mat_G.cwiseProduct(mat_I);
 
-			typename TScalarImageType::Pointer pO = CreateITKImage<TScalarImageType>(0, imSize[0], imSize[1]);
+			typename TScalarImageType::Pointer pO = CreateITKImage2D<TScalarImageType>(0, imSize[0], imSize[1]);
 			SetImageFromMatrix<TScalarImageType>(pO, mat_G);
 			return pO;
 		}
@@ -555,7 +538,7 @@ namespace ccipd
 			}
 
 			// Transform the orientation matrix to an image to get the Haralick entropy
-			typename TInputImage::Pointer pOrient = CreateITKImage<TInputImage>(0, I_gradient_inner.rows(), I_gradient_inner.cols());
+			typename TInputImage::Pointer pOrient = CreateITKImage2D<TInputImage>(0, I_gradient_inner.rows(), I_gradient_inner.cols());
 			SetImageFromMatrix<TInputImage>(pOrient, I_gradient_inner);
 
 			// Quantizing the orientation image
