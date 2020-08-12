@@ -6,7 +6,7 @@ Please visit/star the NEW UPDATED repository at: https://github.com/radxtools/co
  
 # This repository
 
-This is an alpha implementation of the CoLlAGe radiomics descriptor built as a 3D Slicer plugin. An alpha version of a command-line executable is also available under [Releases](https://github.com/ccipd/CoLlAGeSlicerExtension/releases)
+This is an alpha implementation of the CoLlAGe radiomics descriptor built as a 3D Slicer plugin. An alpha version of a command-line executable is also available under [Releases](https://github.com/ccipd/CoLlAGeSlicerExtension/releases). Information on installing, building, and running the tool are available in the [wiki](https://github.com/ccipd/CoLlAGeSlicerExtension/wiki).
 
 # Co-occurrence of Local Anisotropic Gradient Orientations (CoLlAGe)
 
