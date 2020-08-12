@@ -4,8 +4,6 @@ Please note that CoLlAGe has been fully rebuilt as a Python module and is availa
 
 Please visit/star the NEW UPDATED repository at: https://github.com/radxtools/collageradiomics
  
-# CoLlAGe Extension
-
 This release is an alpha implementation of the CoLlAGe radiomics descriptor built as a 3D Slicer plugin. An alpha version of a command-line executable is also available under [Releases](https://github.com/ccipd/CoLlAGeSlicerExtension/releases)
 
 # Co-occurrence of Local Anisotropic Gradient Orientations (CoLlAGe)
